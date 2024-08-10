@@ -2,6 +2,6 @@
 Este estilo h1 solo afecta a los elementos del componente.
 No afectará a los elementos de otros componentes, así sea padres o hijos.
 */
-h1{
+/* h1{
   color: blue;
-}
+} */
