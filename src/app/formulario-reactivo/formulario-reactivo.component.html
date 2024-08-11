@@ -6,19 +6,29 @@
         <label for="nombre" class="form-label">Nombre: </label>
         <input type="text" [formControl]="name" id="nombre" class="form-control"
           placeholder="Por favor ingrese su nombre">
+
+        <div class="alert alert-danger mt-2" *ngIf="name.invalid && name.dirty">
+          <p *ngIf="name.errors?.['required']">Nombre es requerido</p>
+          <p *ngIf="name.errors?.['minlength']">Debe tener al menos 3 caracteres</p>
+        </div>
       </div>
 
       <div class="mb-2">
         <label for="email" class="form-label">Email: </label>
         <input type="text" [formControl]="email" id="email" class="form-control"
           placeholder="Por favor ingrese su email">
+
+        <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine">
+          <p *ngIf="email.errors?.['required']">Email es requerido</p>
+          <p *ngIf="email.errors?.['email']">Debe ser un email valido</p>
+        </div>
       </div>
 
       <button type="submit" class="btn btn-primary mt-4">Enviar</button>
-      
+
     </form>
   </div>
 </div>
 
-{{ name.value }}
-{{ email.value }}
+<!-- {{ name.value }} -->
+<!-- {{ email.value }} -->

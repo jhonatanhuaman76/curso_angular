@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-reactivo',
@@ -7,8 +7,8 @@ import { FormControl } from '@angular/forms';
   styleUrl: './formulario-reactivo.component.css'
 })
 export class FormularioReactivoComponent {
-  name = new FormControl('');
-  email = new FormControl('');
+  name = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  email = new FormControl('', [Validators.required, Validators.email]);
 
   onSubmit() {
     console.log(this.name.value);
