@@ -8,6 +8,8 @@ import { BotonesComponent } from './botones/botones.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { BuclesComponent } from './bucles/bucles.component';
 import { SwitchComponent } from './switch/switch.component';
+import { FormularioPlantillaComponent } from './formulario-plantilla/formulario-plantilla.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { SwitchComponent } from './switch/switch.component';
     BotonesComponent,
     FormularioComponent,
     BuclesComponent,
-    SwitchComponent
+    SwitchComponent,
+    FormularioPlantillaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

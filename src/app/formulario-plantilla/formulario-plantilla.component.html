@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-body">
+    <form (ngSubmit)="procesar()">
+
+      <div>
+        <label for="nombres" class="form-label">Nombres</label>
+        <input type="text" id="nombres" class="form-control" placeholder="Ingresa tu nombre"
+          [(ngModel)]="persona.nombres" name="nombres">
+      </div>
+
+      <div class="mt-4">
+        <label for="apellidos" class="form-label">Apellidos</label>
+        <input type="text" id="apellidos" class="form-control" placeholder="Ingresa tus apellidos"
+          [(ngModel)]="persona.apellidos" name="apellidos">
+      </div>
+
+      <div class="mt-4">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="number" id="edad" class="form-control" placeholder="Ingresa tu edad" [(ngModel)]="persona.edad"
+          name="edad">
+      </div>
+
+      <button class="btn btn-primary mt-4">Enviar</button>
+
+    </form>
+  </div>
+</div>
+
+<!-- 
+  *** Pairs en Angular ***
+-->
+{{ persona | json }}
