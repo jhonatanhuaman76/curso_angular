@@ -1,0 +1,22 @@
+<div class="btn-group gap-2">
+
+  <!--Desabilitando botones con atributo dinamicamente-->
+  <button [disabled]="css_button_disabled" class="btn btn-danger" (click)="css_text_color = 'text-danger'">Color
+    rojo</button>
+
+  <!--Desabilitando botones con clase dinamicamente-->
+  <button [class.disabled]="css_button_disabled" class="btn btn-success" (click)="css_text_color = 'text-success'">Color
+    verde</button>
+  <button [class.disabled]="css_button_disabled" class="btn btn-primary" (click)="css_text_color = 'text-primary'">Color
+    azul</button>
+
+  <!--Otra forma de agregar clases dinamicamente:-->
+  <button [ngClass]="{
+    'disabled': css_button_disabled,
+  }" class="btn btn-warning" (click)="css_text_color = 'text-warning'">Color amarillo</button>
+
+</div>
+
+<p [ngClass]="css_text_color" >Texto que va a cambiar de color</p>
+
+<button class="btn btn-secondary" (click)="css_button_disabled = !css_button_disabled">Activar / Desactivar</button>
