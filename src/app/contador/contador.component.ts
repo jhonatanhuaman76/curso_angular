@@ -19,4 +19,14 @@ export class ContadorComponent {
     apellidos: 'Huaman Pintado',
     edad : 19
   }
+
+  numero: number = 1;
+
+  incrementar() {
+    this.numero++;
+  }
+
+  decrementar() {
+    this.numero--;
+  }
 }
