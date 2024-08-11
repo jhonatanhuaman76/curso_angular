@@ -20,3 +20,13 @@
 <p [ngClass]="css_text_color" >Texto que va a cambiar de color</p>
 
 <button class="btn btn-secondary" (click)="css_button_disabled = !css_button_disabled">Activar / Desactivar</button>
+
+<br>
+<div class="btn-group gap-2 mt-5 mb-3">
+  <button class="btn btn-primary"
+    (click)="src = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'">Imagen 1</button>
+  <button class="btn btn-danger"
+    (click)="src = 'https://cdn.pixabay.com/photo/2023/09/11/14/19/weights-8246972_1280.jpg'">Imagen 2</button>
+</div>
+<br>
+<img [src]="src" alt="" />
