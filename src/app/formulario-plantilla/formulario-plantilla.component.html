@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-body">
-    <form (ngSubmit)="procesar()">
+    <form (ngSubmit)="procesar()" #formContact="ngForm">
 
       <div>
         <label for="nombres" class="form-label">Nombres</label>
@@ -32,7 +32,7 @@
         </div>
       </div>
 
-      <button class="btn btn-primary mt-4">Enviar</button>
+      <button class="btn btn-primary mt-4" [disabled]="formContact.invalid">Enviar</button>
 
     </form>
   </div>
