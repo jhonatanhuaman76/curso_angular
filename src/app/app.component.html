@@ -14,7 +14,7 @@
       <!--
       *** Pasar datos a un componente hijo usando la interpolacion ***
       -->
-      <app-children title="{{ title }}"></app-children>
+      <app-children title="{{ title }}" (titleChange)="title = $event"></app-children>
     </div>
   </div>
 
@@ -23,9 +23,19 @@
       <!--
       *** Pasar datos a un componente hijo usando la vinculacion unidireccional (Property Binding) ***
       -->
-      <app-children [title]="title"></app-children>
+      <app-children [title]="title" (titleChange)="title = $event"></app-children>
     </div>
   </div>
+
+    <div class="card">
+      <div class="card-body">
+        <!--
+          *** Pasar datos a un componente hijo usando la vinculacion bidireccional (Two-Way Binding).
+          *** Con esta sintaxis se puede usar también el camio en ambos sentidos por el evento change.
+        -->
+        <app-children [(title)]="title"></app-children>
+      </div>
+    </div>
 </div>
 
 <!--
