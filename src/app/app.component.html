@@ -1,4 +1,4 @@
-<div class="container p-2">
+<div class="container p-2" *ngIf="false">
 
   <!-- *** Comunicacion entre componentes @Input *** -->
   <div class="card mb-2">
@@ -27,18 +27,28 @@
     </div>
   </div>
 
-    <div class="card">
-      <div class="card-body">
-        <!--
+  <div class="card">
+    <div class="card-body">
+      <!--
           *** Pasar datos a un componente hijo usando la vinculacion bidireccional (Two-Way Binding).
           *** Con esta sintaxis se puede usar también el camio en ambos sentidos por el evento change.
         -->
-        <app-children [(title)]="title"></app-children>
-      </div>
+      <app-children [(title)]="title"></app-children>
     </div>
+  </div>
 </div>
 
 <!--
 NOTA: Los cambios que realicemos en el componente padre si se reflejan en los componentes hijos.
 Pero los cambios realizados en el componente hijo no se reflejan en los demás componentes, ni en padres o hermanos.
 -->
+
+
+<!-- *** Servicios *** -->
+<div class="container p-2">
+  <h1>Servicios</h1>
+
+  <app-add-messages></app-add-messages>
+
+  <app-list-messages></app-list-messages>
+</div>
