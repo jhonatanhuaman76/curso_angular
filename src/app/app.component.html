@@ -1,4 +1,34 @@
-<div class="container">
-  <h1>{{ title }}</h1>
-  <app-formulario-reactivo></app-formulario-reactivo>
+<div class="container p-2">
+
+  <!-- *** Comunicacion entre componentes @Input *** -->
+  <div class="card mb-2">
+    <div class="card-body">
+      <h2>Componente Padre</h2>
+      <p>Title: {{ title }}</p>
+      <input type="text" class="form-control mb-4" [(ngModel)]="title">
+    </div>
+  </div>
+
+  <div class="card mb-2">
+    <div class="card-body">
+      <!--
+      *** Pasar datos a un componente hijo usando la interpolacion ***
+      -->
+      <app-children title="{{ title }}"></app-children>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <!--
+      *** Pasar datos a un componente hijo usando la vinculacion unidireccional (Property Binding) ***
+      -->
+      <app-children [title]="title"></app-children>
+    </div>
+  </div>
 </div>
+
+<!--
+NOTA: Los cambios que realicemos en el componente padre si se reflejan en los componentes hijos.
+Pero los cambios realizados en el componente hijo no se reflejan en los demás componentes, ni en padres o hermanos.
+-->

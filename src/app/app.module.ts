@@ -11,6 +11,7 @@ import { SwitchComponent } from './switch/switch.component';
 import { FormularioPlantillaComponent } from './formulario-plantilla/formulario-plantilla.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioReactivoComponent } from './formulario-reactivo/formulario-reactivo.component';
+import { ChildrenComponent } from './children/children.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormularioReactivoComponent } from './formulario-reactivo/formulario-re
     BuclesComponent,
     SwitchComponent,
     FormularioPlantillaComponent,
-    FormularioReactivoComponent
+    FormularioReactivoComponent,
+    ChildrenComponent
   ],
   imports: [
     BrowserModule,
