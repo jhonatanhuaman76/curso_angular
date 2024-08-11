@@ -5,19 +5,31 @@
       <div>
         <label for="nombres" class="form-label">Nombres</label>
         <input type="text" id="nombres" class="form-control" placeholder="Ingresa tu nombre"
-          [(ngModel)]="persona.nombres" name="nombres">
+          [(ngModel)]="persona.nombres" name="nombres" required #name="ngModel">
+
+        <div class="alert alert-danger mt-2" *ngIf="name.invalid && !name.pristine">
+          <p>Nombres es requerido</p>
+        </div>
       </div>
 
       <div class="mt-4">
         <label for="apellidos" class="form-label">Apellidos</label>
         <input type="text" id="apellidos" class="form-control" placeholder="Ingresa tus apellidos"
-          [(ngModel)]="persona.apellidos" name="apellidos">
+          [(ngModel)]="persona.apellidos" name="apellidos" required #surname="ngModel">
+
+        <div class="alert alert-danger mt-2" *ngIf="surname.invalid && surname.dirty">
+          <p>Apellidos es requerido</p>
+        </div>
       </div>
 
       <div class="mt-4">
         <label for="edad" class="form-label">Edad</label>
         <input type="number" id="edad" class="form-control" placeholder="Ingresa tu edad" [(ngModel)]="persona.edad"
-          name="edad">
+          name="edad" required #age="ngModel">
+
+        <div class="alert alert-danger mt-2" [hidden]="age.valid || age.pristine">
+          <p>Edad es requerida</p>
+        </div>
       </div>
 
       <button class="btn btn-primary mt-4">Enviar</button>
@@ -30,3 +42,5 @@
   *** Pairs en Angular ***
 -->
 {{ persona | json }}
+<!-- {{ name.errors | json }} -->
+<!-- {{name.valid}} -->
