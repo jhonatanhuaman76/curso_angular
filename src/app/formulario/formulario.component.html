@@ -9,3 +9,18 @@ Acceder a su valor: variable.value
 <button class="btn btn-primary mt-2" (click)="mostrarEnConsola(name.value)">
   Mostrar en consola
 </button>
+
+<div class="alert alert-primary mt-4" *ngIf="openAlert; else mensaje">
+  <p>Se ha enviado el mensaje</p>
+  <p>Tu nombre es: {{ name.value }}</p>
+  <button class="btn btn-danger" (click)="openAlert = false">
+    x
+  </button>
+</div>
+
+<!-- Aparece cuando ngIf no se cumple. Mostrando lo que hay en el else-->
+<ng-template #mensaje>
+  <div class="alert alert-danger mt-4">
+    <p>No se ha enviado el mensaje</p>
+  </div>
+</ng-template>

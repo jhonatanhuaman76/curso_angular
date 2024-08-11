@@ -6,8 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './formulario.component.css'
 })
 export class FormularioComponent {
-
+  openAlert: boolean = false;
+  
   mostrarEnConsola(name: string) {
     console.log(name);
+    this.openAlert = true;
   }
 }
